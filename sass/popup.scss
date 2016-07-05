@@ -1,0 +1,27 @@
+.popup {
+	position: absolute;
+	width: 100%;
+	max-width: 870px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #fff;
+	border-radius: 5px;
+	top: 120px;
+	padding-bottom: 22px;
+  margin-bottom: 200px;
+}
+.popup__close {
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	border-radius: 50%;
+	background: $white url(../img/icons.png);
+	background-repeat: no-repeat;
+	background-position: -88px 3px;
+	right: -5px;
+	top: -5px;
+	transition: 0.3s;
+	&:hover {
+		background-color: lighten($grey, 2%);
+	}
+}

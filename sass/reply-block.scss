@@ -1,0 +1,29 @@
+.reply-block {
+  border-left: 4px solid #c6c6c6;
+  margin-left: 17px;
+	padding-left: 20px;
+	border-top: 1px solid $milk;
+	padding-top: 13px;
+
+}
+.reply-block ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.reply__item {
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 12px;
+	color: $grey;
+	font-weight: 700;
+	margin-right: 15px;
+
+  &.active {
+  	color: #555555;
+  }
+  &:hover {
+  	color: lighten($grey, 5%);
+  }
+}
+

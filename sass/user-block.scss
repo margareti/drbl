@@ -1,0 +1,22 @@
+.user-block {
+	padding-left: 15px;
+	display: flex;
+	align-items: center;
+	padding-bottom: 20px;
+	align-content: center;
+}
+.user-block__user {
+	padding-left: 15px;
+}
+.user-block__name {
+	color: $skyblue;
+	font-family: 'Times New Roman', serif;
+	margin: 0;
+	font-size: 18px;
+}
+.user-block__time {
+	margin: 0;
+	text-transform: uppercase;
+	color: $grey;
+	font-size: 10px;
+}

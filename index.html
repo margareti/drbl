@@ -3,64 +3,76 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet">
+
 </head>
 <body>
 	<section class="popup">
-	  <div class="close"></div>
+	  <div class="popup__close"></div>
 		<div class="video">
-			<div class="video__wrap"></div>
-      <div class="video__controls">
-      	<ul>
-      		<li class="video__pause"></li>
-      		<li class="video__play"></li>
-      		<li class="video__status">
-      			<div class="video__timeline"></div>
-      			<div class="video__current"></div>
-      		</li>
-      	</ul>
-      </div>
+			<div class="video__wrap">
+				<img src="img/bg.jpg" alt="">
+			</div>
+      <ul class="video__controls">
+    		<li class="video__control  video__control--sq  active">
+    			<span class="video__play"></span>
+    		</li>
+    		<li class="video__control  video__control--sq  video__control--speaker">
+    			<img src="img/speaker.png" alt="">
+    		</li>
+    		<li class="video__control  video__control--status">
+    			<div class="video__timeline">
+    				<div class="video__current"></div>
+    			</div>
+    			
+    		</li>
+    	</ul>
 		</div>
 		<div class="video-meta">
-      <div class="video-meta__left">
+      <div class="video-meta__item  video-meta__left">
       	<ul class="social">
-      		<li><a href="#" class="social__item  social__item--like">Like</a></li>
-      		<li><a href="#" class="social__item  social__item--share">Share</a></li>
+      		<li class="social__item  social__item--like"><a href="#" >Like</a></li>
+      		<li class="social__item  social__item--share"><a href="#" >Share</a></li>
       	</ul>
       </div>
-      <div class="video-meta__right"></div>
+      <div class="video-meta__item  video-meta__right">
         <ul>
         	<li><button type="button" class="video-meta__button  video-meta__button--red">Edit</button></li>
         	<li><button type="button" class="video-meta__button  video-meta__button--black">Delete</button></li>
         </ul>
+      </div>
+      <textarea placeholder="comment..." class="textarea"></textarea>
 		</div>
-		<textarea placeholder="comment..." class="textarea"></textarea>
+		
 		<div class="comment-area">
 			<div class="comment-area__item">
 				<div class="user-block">
 					<div class="user-block__avatar">
-						<img src="" alt="" >
+						<img src="img/avatar.png" alt="" >
 					</div>
 					<div class="user-block__user">
-						<h2 class="user-block__name">Stoyan Damyanoff</h2>
+						<h2 class="user-block__name">Stoyan Daskaloff</h2>
 						<p class="user-block__time">March 7, 2013 at 7:30 PM</p>
 					</div>
 				</div>
 				<div class="comment-area__comment">
-					<blockquote class="comment-area__copy"></blockquote>
+					<blockquote class="comment-area__copy">Sed quis diam egestas, egestas mauris in, dapibus eros. Duis nisi nulla, accumsan eu libero sit amet, faucibus ornare nisi. Phasellus cursus dolor ante, at placerat est tincidunt vel. In ullamcorper pulvinar est id congue. Pellentesque scelerisque ante vel justo varius, non aliquet est eleifend. Aliquam erat volutpat. Curabitur blandit, lorem eget tincidunt scelerisque, mauris felis pellentesque dolor, et adipiscing nisi ipsum eget est.</blockquote>
 					<ul class="social">
-	      		<li><a href="#" class="social__item  social__item--like">Like</a></li>
-	      		<li><a href="#" class="social__item  social__item--share">Share</a></li>
-	      		<li><a href="#" class="social__item  social__item--comment">Comment</a></li>
-	      		<li><a href="#" class="social__item  social__item--report">Report</a></li>
+	      		<li class="social__item  social__item--like"><a href="#" >Like</a></li>
+	      		<li class="social__item  social__item--share"><a href="#">Share</a></li>
+	      		<li class="social__item  social__item--comment"><a href="#">Comment</a></li>
+	      		<li class="social__item  social__item--report"><a href="#">Report</a></li>
 	      	</ul>
 				</div>
 				<div class="reply-block">
 	      	<ul>
-	      		<li class="reply__item active">Comment</li>
-	      		<li class="reply__item">Photo</li>
-	      		<li class="reply__item">Feedback</li>
+	      		<li class="reply__item active"><a href="#">Comment</a></li>
+	      		<li class="reply__item"><a href="#">Photo</a></li>
+	      		<li class="reply__item"><a href="#">Feedback</a></li>
 	      	</ul>
-	      	<textarea placeholder="Reply..."></textarea>
+	      	<textarea class="textarea  textarea--margin-small"  placeholder="Reply..."></textarea>
 	      </div>
 
 			</div>
