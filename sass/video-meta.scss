@@ -29,13 +29,19 @@
 	&--red {
 		background: $red;
 		&:hover {
-			background: lighten($red, 10%);
+			background: darken($red, 10%);
 		}
 	}
 	&--black {
 		background: $black;
 		&:hover {
-			background: lighten($black, 10%);
+			background: darken($black, 10%);
+		}
+	}
+	&--green {
+		background: $green;
+		&:hover {
+			background: lighten($green, 10%);
 		}
 	}
 

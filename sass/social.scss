@@ -9,6 +9,7 @@
 	position: relative;
 }
 .social__item {
+	margin-top: 10px;
 	display: inline-block;
 	position: relative;
 	padding-left: 25px;
@@ -45,6 +46,15 @@
     }
   }
   &:hover {
-  	color: lighten($grey, 10%);
+  	color: lighten($dullblue, 20%);
+  }
+  @media (max-width: 767px) {
+
+	  &--report {
+      position: relative;
+      width: 100%;
+
+	  }
   }
 }
+

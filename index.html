@@ -7,6 +7,8 @@
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 	<link href="css/style.css" rel="stylesheet">
 
+	<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script> -->
+
 </head>
 <body>
 	<section class="popup">
@@ -14,6 +16,12 @@
 		<div class="video">
 			<div class="video__wrap">
 				<img src="img/bg.jpg" alt="">
+				
+				<div class="video__module">
+    	    <input type="text" name="vid" id="vid" class="video__input">
+          <button type="button" id="videoid" class="video-meta__button  video-meta__button--green">Submit</button>
+    	  </div>
+    	  <div id="player"></div>
 			</div>
       <ul class="video__controls">
     		<li class="video__control  video__control--sq  active">
@@ -39,7 +47,9 @@
       </div>
       <div class="video-meta__item  video-meta__right">
         <ul>
-        	<li><button type="button" class="video-meta__button  video-meta__button--red">Edit</button></li>
+        	<li>
+        	  <button type="button" class="video-meta__button  video-meta__button--red">Edit</button>
+        	</li>
         	<li><button type="button" class="video-meta__button  video-meta__button--black">Delete</button></li>
         </ul>
       </div>
@@ -78,5 +88,6 @@
 			</div>
 		</div>
 	</section>
+	<script src="js/script.js"></script>
 </body>
 </html>

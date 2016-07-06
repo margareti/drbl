@@ -86,6 +86,7 @@
 	background: $skyblue;
 	left: 0;
 	top: 0;
+	transition: 0.5s;
 	position: relative;
 	&:after {
     content: '';
@@ -99,4 +100,56 @@
     top: 50%;
     transform: translateY(-50%);
 	}
+  &:hover {
+  	background: darken($skyblue, 5%);
+  }
+}
+.video__wrap {
+	background: gainsboro;
+	&:before {
+	  content: "Paste video ID to add a video, i.e: M7lc1UVf-VE";
+	  text-align: center;
+	  display: block;
+	  padding-top: 10px;
+	}
+	img {
+		opacity: 0;
+	}
+	&.active {
+		&:before {
+			content: none;
+		}
+		.video__module {
+			display: none;
+		}
+	}
+}
+
+.video__module {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+}
+.video__input {
+	display: block;
+	border-radius: 5px;
+	margin: auto;
+	margin-bottom: 10px;
+	width: 100%;
+	max-width: 300px;
+	padding: 5px;
+	border: none;
+	border: 1px solid $grey;
+	outline: none;
+	box-sizing: border-box;
+}
+#player {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
 }
