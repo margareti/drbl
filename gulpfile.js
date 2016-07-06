@@ -6,6 +6,11 @@ var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync");
+var cssmin = require('gulp-cssmin');
+var run =  require("run-sequence");
+var del = require("del");
+var minify = require("gulp-csso");
+var rename = require("gulp-rename");
 
 gulp.task("style", function() {
   gulp.src("sass/style.scss")
@@ -20,18 +25,44 @@ gulp.task("style", function() {
         "last 2 Edge versions"
       ]})
     ]))
-    .pipe(gulp.dest("css"))
+    .pipe(gulp.dest("build/css"))
+    .pipe(minify())
+    .pipe(rename("style.min.css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(server.reload({stream: true}));
 });
 
-gulp.task("serve", ["style"], function() {
+
+gulp.task("copy", function() {
+  return gulp.src([
+    "fonts/**/*.{woff, woff2}",
+    "img/**",
+    "js/**",
+    "*.html"
+    ], {
+      base: "."
+    })
+  .pipe(gulp.dest("build"));
+});
+
+gulp.task("clean", function() {
+  return del("build");
+});
+
+gulp.task("serve", function() {
   server.init({
-    server: ".",
-    notify: false,
-    open: true,
-    ui: false
+    server: "build",
   });
 
   gulp.watch("sass/**/*.{scss,sass}", ["style"]);
   gulp.watch("*.html").on("change", server.reload);
+});
+
+gulp.task("build", function(fn) {
+  run(
+    "clean",
+    "copy",
+    "style",
+    fn
+    )
 });
