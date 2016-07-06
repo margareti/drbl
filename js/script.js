@@ -48,5 +48,19 @@
   }
   
 
+  var comment = document.getElementById('comment-input');
+  comment.addEventListener('keydown', addComment);
+
+  function addComment(e) {
+    var comment;
+    var obj = {}
+    if (e.keyCode === 13) {
+      comment = this.value;
+      obj.comment = comment;
+      ko.applyBindings(obj);
+    }
+  }
+
+
 })();
       
