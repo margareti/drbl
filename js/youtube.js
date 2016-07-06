@@ -8,6 +8,7 @@
 
 
   var player;
+
   function onYouTubeIframeAPIReady(id) {
     player = new YT.Player('player', {
       height: '412',
@@ -22,6 +23,7 @@
 
   function onPlayerReady(event) {
     event.target.playVideo();
+ 
   }
 
 
@@ -32,10 +34,10 @@
       done = true;
     }
   }
-  function stopVideo() {
+
+   function stopVideo() {
     player.stopVideo();
   }
-  
 
   var videoHandler = document.getElementById('videoid');
   var videoWrap = document.querySelector('.video-wrap');
