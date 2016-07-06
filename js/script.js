@@ -39,28 +39,15 @@
 
   var videoHandler = document.getElementById('videoid');
   var videoWrap = document.querySelector('.video-wrap');
+  var pause = document.querySelector('.video__play');
 
   videoHandler.addEventListener('click', loadVid);
+  pause.addEventListener('click', stopVideo);
 
   function loadVid() {
     var video = document.getElementById('vid').value;
     onYouTubeIframeAPIReady(video);
   }
-  
-
-  var comment = document.getElementById('comment-input');
-  comment.addEventListener('keydown', addComment);
-
-  function addComment(e) {
-    var comment;
-    var obj = {}
-    if (e.keyCode === 13) {
-      comment = this.value;
-      obj.comment = comment;
-      ko.applyBindings(obj);
-    }
-  }
-
 
 })();
       

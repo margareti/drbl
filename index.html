@@ -53,7 +53,7 @@
         	<li><button type="button" class="video-meta__button  video-meta__button--black">Delete</button></li>
         </ul>
       </div>
-      <textarea placeholder="comment..." class="textarea"></textarea>
+      <input type="text" placeholder="comment..." class="textarea">
 		</div>
 		
 		<div class="comment-area">
@@ -67,7 +67,7 @@
 						<p class="user-block__time">March 7, 2013 at 7:30 PM</p>
 					</div>
 				</div>
-				<script type="text/html" id="comment-template">
+				<div id="comment-template" >
 					<div class="comment-area__comment">
 						<blockquote class="comment-area__copy" data-bind="text: comment"></blockquote>
 						<ul class="social">
@@ -77,8 +77,8 @@
 		      		<li class="social__item  social__item--report"><a href="#">Report</a></li>
 		      	</ul>
 		      </div>
-				</script>
-				<div data-bind="template: { name: 'comment-template' }"></div>
+				</div>
+		
 
 				<div class="reply-block">
 	      	<ul>
@@ -86,17 +86,15 @@
 	      		<li class="reply__item"><a href="#">Photo</a></li>
 	      		<li class="reply__item"><a href="#">Feedback</a></li>
 	      	</ul>
-	      	<textarea class="textarea  textarea--margin-small"  id="comment-input" placeholder="Reply..."></textarea>
+	      	<input type="text" class="textarea  textarea--margin-small"  data-bind="textInput: comment, valueUpdate: 'afterkeydown'" id="comment-input" placeholder="Reply..."  >
+       
 	      </div>
 
 			</div>
 		</div>
 	</section>
-	<script type="text/javascript">
-   var firstComment = {comment: 'Sed quis diam egestas, egestas mauris in, dapibus eros. Duis nisi nulla, accumsan eu libero sit amet, faucibus ornare nisi. Phasellus cursus dolor ante, at placerat est tincidunt vel. In ullamcorper pulvinar est id congue. Pellentesque scelerisque ante vel justo varius, non aliquet est eleifend. Aliquam erat volutpat. Curabitur blandit, lorem eget tincidunt scelerisque, mauris felis pellentesque dolor, et adipiscing nisi ipsum eget est.'
-  }
-   ko.applyBindings(firstComment);
-  </script>
-	<script src="js/script.js"></script>
+
+	<script src="js/youtube.js"></script>
+	<script src="js/comment.js"></script>
 </body>
 </html>
