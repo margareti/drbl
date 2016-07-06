@@ -48,6 +48,9 @@
   &:hover {
   	color: lighten($dullblue, 20%);
   }
+  &--report:hover {
+    color: darken($grey, 20%);
+  }
   @media (max-width: 767px) {
 
 	  &--report {

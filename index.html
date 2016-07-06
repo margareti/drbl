@@ -7,8 +7,7 @@
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 	<link href="css/style.css" rel="stylesheet">
 
-	<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script> -->
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
 </head>
 <body>
 	<section class="popup">
@@ -18,7 +17,8 @@
 				<img src="img/bg.jpg" alt="">
 				
 				<div class="video__module">
-    	    <input type="text" name="vid" id="vid" class="video__input">
+				  <label for="vid">Paste in a video ID, i.e: M7lc1UVf-VE</label>
+    	    <input type="text" name="vid" id="vid" class="video__input" placeholder="M7lc1UVf-VE">
           <button type="button" id="videoid" class="video-meta__button  video-meta__button--green">Submit</button>
     	  </div>
     	  <div id="player"></div>
@@ -53,7 +53,7 @@
         	<li><button type="button" class="video-meta__button  video-meta__button--black">Delete</button></li>
         </ul>
       </div>
-      <textarea placeholder="comment..." class="textarea"></textarea>
+      <input type="text" placeholder="comment..." class="textarea">
 		</div>
 		
 		<div class="comment-area">
@@ -67,27 +67,34 @@
 						<p class="user-block__time">March 7, 2013 at 7:30 PM</p>
 					</div>
 				</div>
-				<div class="comment-area__comment">
-					<blockquote class="comment-area__copy">Sed quis diam egestas, egestas mauris in, dapibus eros. Duis nisi nulla, accumsan eu libero sit amet, faucibus ornare nisi. Phasellus cursus dolor ante, at placerat est tincidunt vel. In ullamcorper pulvinar est id congue. Pellentesque scelerisque ante vel justo varius, non aliquet est eleifend. Aliquam erat volutpat. Curabitur blandit, lorem eget tincidunt scelerisque, mauris felis pellentesque dolor, et adipiscing nisi ipsum eget est.</blockquote>
-					<ul class="social">
-	      		<li class="social__item  social__item--like"><a href="#" >Like</a></li>
-	      		<li class="social__item  social__item--share"><a href="#">Share</a></li>
-	      		<li class="social__item  social__item--comment"><a href="#">Comment</a></li>
-	      		<li class="social__item  social__item--report"><a href="#">Report</a></li>
-	      	</ul>
+				<div id="comment-template" >
+					<div class="comment-area__comment">
+						<blockquote class="comment-area__copy" data-bind="text: comment"></blockquote>
+						<ul class="social">
+		      		<li class="social__item  social__item--like"><a href="#" >Like</a></li>
+		      		<li class="social__item  social__item--share"><a href="#">Share</a></li>
+		      		<li class="social__item  social__item--comment"><a href="#">Comment</a></li>
+		      		<li class="social__item  social__item--report"><a href="#">Report</a></li>
+		      	</ul>
+		      </div>
 				</div>
+		
+
 				<div class="reply-block">
 	      	<ul>
 	      		<li class="reply__item active"><a href="#">Comment</a></li>
 	      		<li class="reply__item"><a href="#">Photo</a></li>
 	      		<li class="reply__item"><a href="#">Feedback</a></li>
 	      	</ul>
-	      	<textarea class="textarea  textarea--margin-small"  placeholder="Reply..."></textarea>
+	      	<input type="text" class="textarea  textarea--margin-small"  data-bind="event: { keyup: myFunction }" id="comment-input" placeholder="Reply..."  >
+       
 	      </div>
 
 			</div>
 		</div>
 	</section>
-	<script src="js/script.js"></script>
+
+	<script src="js/youtube.js"></script>
+	<script src="js/comment.js"></script>
 </body>
 </html>

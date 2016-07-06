@@ -39,14 +39,15 @@
 
   var videoHandler = document.getElementById('videoid');
   var videoWrap = document.querySelector('.video-wrap');
+  var pause = document.querySelector('.video__play');
 
   videoHandler.addEventListener('click', loadVid);
+  pause.addEventListener('click', stopVideo);
 
   function loadVid() {
     var video = document.getElementById('vid').value;
     onYouTubeIframeAPIReady(video);
   }
-  
 
 })();
       
